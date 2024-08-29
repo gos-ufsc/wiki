@@ -3,6 +3,8 @@
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
+import remarkMath from 'remark-math';
+import rehypeMathjax from 'rehype-mathjax';
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
@@ -30,8 +32,8 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'br',
+    locales: ['pt-br'],
   },
 
   presets: [
@@ -45,6 +47,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            remarkPlugins: [remarkMath],
+            rehypePlugins: [rehypeMathjax]
 
         },
         blog: {
@@ -84,7 +88,7 @@ const config = {
           async: true,
         },
       ],      navbar: {
-        title: 'My Site',
+        title: 'GOS-Wiki',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
